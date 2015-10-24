@@ -460,7 +460,7 @@ class Client
         
         try {
                 $response = $request->send()->json();
-        } catch (BadRequest400Exception $e) {
+        } catch (\Exception $e) {
                 echo 'Uh oh! ' . $e->getMessage();
         }
         return $response;
