@@ -458,7 +458,14 @@ class Client
     {
         $request = $this->auth->addCredentialsToRequest($request);
 
-        return $request->send()->json();
+        return 
+        
+        try {
+                $response = $request->send()->json();
+        } catch (Guzzle\Http\Exception\BadResponseException $e) {
+                echo 'Uh oh! ' . $e->getMessage();
+        }
+        return $response;
     }
 
     /**
