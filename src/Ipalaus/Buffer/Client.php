@@ -457,8 +457,6 @@ class Client
     protected function send(Request $request)
     {
         $request = $this->auth->addCredentialsToRequest($request);
-
-        return 
         
         try {
                 $response = $request->send()->json();
