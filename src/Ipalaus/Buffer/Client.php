@@ -458,12 +458,7 @@ class Client
     {
         $request = $this->auth->addCredentialsToRequest($request);
         
-        try {
-                $response = $request->send()->json();
-        } catch (\Exception $e) {
-                echo 'Uh oh! ' . $e->getMessage();
-        }
-        return $response;
+       return $request->send()->json();
     }
 
     /**
